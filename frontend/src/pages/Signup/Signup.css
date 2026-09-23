@@ -1,0 +1,241 @@
+* {
+  box-sizing: border-box;
+}
+
+.signup-page {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  background: #050b18;
+  font-family: "Segoe UI", Arial, sans-serif;
+  padding: 30px 15px;
+}
+
+.signup-background {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.circle {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(2px);
+}
+
+.circle-one {
+  width: 400px;
+  height: 400px;
+  background: rgba(0, 180, 255, 0.12);
+  top: -150px;
+  left: -100px;
+}
+
+.circle-two {
+  width: 500px;
+  height: 500px;
+  background: rgba(100, 50, 255, 0.1);
+  bottom: -200px;
+  right: -150px;
+}
+
+.circle-three {
+  width: 250px;
+  height: 250px;
+  background: rgba(0, 255, 200, 0.07);
+  top: 35%;
+  right: 15%;
+}
+
+.signup-card {
+  width: 100%;
+  max-width: 480px;
+  padding: 38px 42px;
+  position: relative;
+  z-index: 2;
+  background: rgba(10, 20, 38, 0.92);
+  border: 1px solid rgba(0, 200, 255, 0.2);
+  border-radius: 20px;
+  box-shadow:
+    0 25px 60px rgba(0, 0, 0, 0.5),
+    0 0 35px rgba(0, 180, 255, 0.08);
+
+
+}
+
+.signup-icon {
+  width: 58px;
+  height: 58px;
+  margin: 0 auto 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 190, 255, 0.1);
+  border: 1px solid rgba(0, 200, 255, 0.3);
+  border-radius: 15px;
+  font-size: 28px;
+}
+
+.signup-card h1 {
+  margin: 0;
+  text-align: center;
+  color: #ffffff;
+  font-size: 30px;
+  font-weight: 700;
+}
+
+.signup-subtitle {
+  margin: 10px 0 28px;
+  text-align: center;
+  color: #ffffff;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.input-group {
+  margin-bottom: 18px;
+}
+
+.input-group label {
+  display: block;
+  margin-bottom: 7px;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.input-group input {
+  width: 100%;
+  height: 48px;
+  padding: 0 14px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(140, 170, 200, 0.25);
+  border-radius: 9px;
+  color: white;
+  font-size: 14px;
+  outline: none;
+  transition: 0.25s;
+}
+
+.input-group input::placeholder {
+  color: #d4d4e7;
+}
+
+.input-group input:focus {
+  border-color: #00bfff;
+  box-shadow: 0 0 0 3px rgba(0, 191, 255, 0.08);
+}
+
+.password-box {
+  position: relative;
+}
+
+.password-box input {
+  padding-right: 48px;
+}
+
+.eye-button {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-size: 17px;
+  padding: 5px;
+}
+
+.signup-button {
+  width: 100%;
+  height: 49px;
+  margin-top: 5px;
+  border: none;
+  border-radius: 9px;
+  background: linear-gradient(135deg, #00a8ff, #0066ff);
+  color: white;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.25s;
+}
+
+.signup-button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 25px rgba(0, 140, 255, 0.3);
+}
+
+.divider {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 24px 0;
+  color: #60758c;
+  font-size: 12px;
+}
+
+.divider::before,
+.divider::after {
+  content: "";
+  height: 1px;
+  flex: 1;
+  background: rgba(140, 170, 200, 0.18);
+}
+
+.google-button {
+  width: 100%;
+  height: 47px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  border: 1px solid rgba(140, 170, 200, 0.25);
+  border-radius: 9px;
+  background: rgba(255, 255, 255, 0.04);
+  color: #feffff;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.25s;
+}
+
+.google-button:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.google-icon {
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.login-text {
+  text-align: center;
+  margin: 23px 0 0;
+  color: #fbfdff;
+  font-size: 14px;
+}
+
+.login-link {
+  color: #00bfff;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.login-link:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 500px) {
+  .signup-card {
+    padding: 30px 22px;
+  }
+
+  .signup-card h1 {
+    font-size: 26px;
+  }
+}
