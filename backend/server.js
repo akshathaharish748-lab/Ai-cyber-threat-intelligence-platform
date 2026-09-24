@@ -1,9 +1,7 @@
-const express = require("express");
-const cors = require("cors");
-const helmet = require("helmet");
-const rateLimit = require("express-rate-limit");
-const morgan = require("morgan");
-require("dotenv").config();
+const dns = require("dns");
+
+dns.setDefaultResultOrder("ipv4first");
+dns.setServers(["8.8.8.8", "1.1.1.1"]);
 
 const express = require("express");
 const cors = require("cors");
@@ -27,7 +25,10 @@ const apiLimiter = rateLimit({
     max: 200,
     standardHeaders: true,
     legacyHeaders: false,
-    message: { success: false, message: "Too many requests, please try again later." },
+    message: {
+        success: false,
+        message: "Too many requests, please try again later.",
+    },
 });
 
 // Middleware
@@ -42,17 +43,24 @@ app.use("/api/auth", authRoutes);
 
 // Threat routes
 app.use("/api/threats", threatRoutes);
+
+// AI Assistant routes
 app.use("/api/ai-assistant", aiRoutes);
+
+// Report routes
 app.use("/api/reports", reportRoutes);
+
+// Intelligence routes
 app.use("/api/intel", intelRoutes);
 
-// Health and monitoring endpoints
+// Home / API status
 app.get("/", (req, res) => {
     res.json({
-        message: "AI Cyber Threat Intelligence Backend is running!"
+        message: "AI Cyber Threat Intelligence Backend is running!",
     });
 });
 
+// Health endpoint
 app.get("/api/health", (req, res) => {
     const health = {
         status: "ok",
@@ -65,6 +73,7 @@ app.get("/api/health", (req, res) => {
     res.json(health);
 });
 
+// Readiness endpoint
 app.get("/api/health/ready", async (req, res) => {
     const readiness = {
         status: "ready",
@@ -79,6 +88,7 @@ app.get("/api/health/ready", async (req, res) => {
 const startServer = async () => {
     try {
         await connectDB();
+
         app.listen(PORT, "0.0.0.0", () => {
             console.log(`Server running on port ${PORT}`);
         });
