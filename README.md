@@ -1,40 +1,112 @@
-# AI Cyber Threat Intelligence Platform
+# 🛡️ AI Cyber Threat Intelligence Platform
 
-## Deployment and monitoring
+An AI-powered cybersecurity platform designed to detect, analyze, and monitor cyber threats using modern web technologies, threat intelligence, and AI-based detection.
 
-### Required environment variables
+## 🌐 Live Demo
 
-Set the following values in the backend environment before enabling live threat intelligence lookups:
+**Frontend:**  
+https://ai-cyber-threat-intelligence-platfo.vercel.app/
 
-- `ABUSEIPDB_KEY` — your AbuseIPDB API key
-- `VIRUSTOTAL_API_KEY` — your VirusTotal API key
+**Backend API:**  
+https://ai-cyber-threat-intelligence-platform-sxv8.onrender.com/
 
-The project already includes the env entries in [backend/.env](backend/.env).
 
-### Health and readiness endpoints
 
-The backend exposes:
+## 📌 Project Overview
 
-- `GET /api/health` — service uptime and memory stats
-- `GET /api/health/ready` — service readiness signal for deployment probes
+The AI Cyber Threat Intelligence Platform is a full-stack cybersecurity application developed to help identify and analyze potential cyber threats.
 
-These endpoints are implemented in [backend/server.js](backend/server.js).
+The platform provides a centralized interface for security monitoring, threat detection, analysis, alerts, reports, and AI-assisted cybersecurity analysis.
 
-### Recommended deployment
+## ✨ Key Features
 
-- Frontend: Vercel or Netlify
-- Backend: Render, Railway, Fly.io, or a secure Node host
-- Database: MongoDB Atlas
-- Monitoring: UptimeRobot, Sentry, or platform-native log/metrics alerts
+- 🔐 User authentication and authorization
+- 🛡️ Cyber threat detection
+- 🤖 AI-assisted threat analysis
+- 📊 Threat monitoring dashboard
+- 🚨 Security alerts
+- 📈 Threat analysis and visualization
+- 📄 Security report generation
+- 🔎 Threat intelligence analysis
+- 💬 AI cybersecurity assistant
+- 👤 User profile and settings
+- 🌐 REST API backend
+- ☁️ Cloud deployment
 
-### Production checklist
 
-1. Add production values for `MONGO_URI`, `JWT_SECRET`, `ABUSEIPDB_KEY`, `VIRUSTOTAL_API_KEY`, and `FRONTEND_URL`.
-2. Deploy the backend with HTTPS enabled.
-3. Deploy the frontend with the production API base URL.
-4. Point the monitoring service at `/api/health` and configure alerts for failed checks.
-5. Review logs and API errors regularly for provider failures or auth issues.
+## 🏗️ System Architecture
 
-### Report exports
+                    ┌─────────────────────┐
+                    │     React Frontend  │
+                    │       Vite          │
+                    └──────────┬──────────┘
+                               │
+                               │ REST API
+                               ▼
+                    ┌─────────────────────┐
+                    │   Node.js + Express │
+                    │       Backend       │
+                    └──────────┬──────────┘
+                               │
+                 ┌─────────────┼─────────────┐
+                 │             │             │
+                 ▼             ▼             ▼
+          ┌────────────┐ ┌────────────┐ ┌────────────┐
+          │ MongoDB    │ │ Python AI  │ │ Threat     │
+          │ Atlas      │ │ Service    │ │ Intelligence│
+          └────────────┘ └────────────┘ └────────────┘
+            🛡️ AI Cyber Threat Intelligence Platform
 
-The reports page includes both plain-text downloads and PDF export generation via the PDF button in [frontend/src/pages/Reports/Reports.jsx](frontend/src/pages/Reports/Reports.jsx).
+An AI-powered cybersecurity platform designed to detect, analyze, and monitor cyber threats using modern web technologies, threat intelligence, and AI-based detection.
+
+## 🌐 Live Demo
+
+**Frontend:**  
+https://ai-cyber-threat-intelligence-platfo.vercel.app/
+
+**Backend API:**  
+https://ai-cyber-threat-intelligence-platform-sxv8.onrender.com/
+
+
+## 📌 Project Overview
+
+The AI Cyber Threat Intelligence Platform is a full-stack cybersecurity application developed to help identify and analyze potential cyber threats.
+The platform provides a centralized interface for security monitoring, threat detection, analysis, alerts, reports, and AI-assisted cybersecurity analysis.
+
+## ✨ Key Features
+
+- 🔐 User authentication and authorization
+- 🛡️ Cyber threat detection
+- 🤖 AI-assisted threat analysis
+- 📊 Threat monitoring dashboard
+- 🚨 Security alerts
+- 📈 Threat analysis and visualization
+- 📄 Security report generation
+- 🔎 Threat intelligence analysis
+- 💬 AI cybersecurity assistant
+- 👤 User profile and settings
+- 🌐 REST API backend
+- ☁️ Cloud deployment
+
+
+## 🏗️ System Architecture
+
+                    ┌─────────────────────┐
+                    │     React Frontend  │
+                    │       Vite          │
+                    └──────────┬──────────┘
+                               │
+                               │ REST API
+                               ▼
+                    ┌─────────────────────┐
+                    │   Node.js + Express │
+                    │       Backend       │
+                    └──────────┬──────────┘
+                               │
+                 ┌─────────────┼─────────────┐
+                 │             │             │
+                 ▼             ▼             ▼
+          ┌────────────┐ ┌────────────┐ ┌────────────┐
+          │ MongoDB    │ │ Python AI  │ │ Threat     │
+          │ Atlas      │ │ Service    │ │ Intelligence│
+          └────────────┘ └────────────┘ └────────────┘
